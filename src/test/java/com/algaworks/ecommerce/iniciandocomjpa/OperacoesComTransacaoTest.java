@@ -14,9 +14,9 @@ public class OperacoesComTransacaoTest extends EntityManagerTest {
     public void abrirEFecharATransacao() {
         entityManager.getTransaction().begin();
 
-        entityManager.persist(produto);
-        entityManager.merge(produto);
-        entityManager.remove(produto);
+//        entityManager.persist(produto);
+//        entityManager.merge(produto);
+//        entityManager.remove(produto);
 
         entityManager.getTransaction().commit();
     }
