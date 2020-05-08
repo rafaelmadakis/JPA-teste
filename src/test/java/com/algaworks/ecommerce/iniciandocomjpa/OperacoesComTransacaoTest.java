@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 
 public class OperacoesComTransacaoTest extends EntityManagerTest {
 
-    Produto produto = new Produto(); // Somente para o método não mostrar erros
+//    Produto produto = new Produto(); // Somente para o método não mostrar erros
 
     @Test
     public void abrirEFecharATransacao() {
