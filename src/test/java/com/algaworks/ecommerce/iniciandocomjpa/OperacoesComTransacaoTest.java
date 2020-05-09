@@ -10,6 +10,23 @@ import java.math.BigDecimal;
 
 public class OperacoesComTransacaoTest extends EntityManagerTest {
 
+
+    /**
+     * Faz a remoção de um produto
+     */
+    @Test
+    public void removerObjeto() {
+        // faz busca do produto para a deleção
+        Produto produto = entityManager.find(Produto.class, 3);
+
+        entityManager.getTransaction().begin();
+        entityManager.remove(produto);
+        entityManager.getTransaction().commit();
+
+        Produto produtoVerificacao = entityManager.find(Produto.class, 3);
+        Assert.assertNull(produtoVerificacao);
+    }
+
     /**
      * Faz a inserção de um produto
      */
@@ -34,6 +51,9 @@ public class OperacoesComTransacaoTest extends EntityManagerTest {
 
 //    Produto produto = new Produto(); // Somente para o método não mostrar erros
 
+    /**
+     * Método de teste, sem funcionamento, somente abre e fecha transação
+     */
     @Test
     public void abrirEFecharATransacao() {
         entityManager.getTransaction().begin();
