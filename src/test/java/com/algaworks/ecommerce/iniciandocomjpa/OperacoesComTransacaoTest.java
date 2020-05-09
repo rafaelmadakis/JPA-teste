@@ -9,6 +9,24 @@ import java.math.BigDecimal;
 
 public class OperacoesComTransacaoTest extends EntityManagerTest {
 
+    /**
+     * Utiliando o comando detach(desanexar)
+     */
+    @Test
+    public void impedirOperacaoComBancoDeDados() {
+        Produto produto = entityManager.find(Produto.class, 1);
+        entityManager.detach(produto);
+
+        entityManager.getTransaction().begin();
+        produto.setNome("Kindle segunda Geração");
+        entityManager.getTransaction().commit();
+
+        entityManager.clear();
+
+        Produto produtoVerificacao = entityManager.find(Produto.class, produto.getId());
+        Assert.assertEquals("Kindle", produtoVerificacao.getNome());
+    }
+
 
     /**
      * Mostra a diferença entre merge e persist
