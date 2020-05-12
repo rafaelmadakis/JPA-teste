@@ -8,7 +8,7 @@ import javax.persistence.Embeddable;
 
 @Getter
 @Setter
-@Embeddable
+@Embeddable // embutido
 public class EnderecoEntregaPedido {
 
 
