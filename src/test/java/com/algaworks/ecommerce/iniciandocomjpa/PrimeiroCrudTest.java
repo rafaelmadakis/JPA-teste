@@ -13,7 +13,7 @@ public class PrimeiroCrudTest extends EntityManagerTest {
 
         Cliente cliente = new Cliente();
 
-        cliente.setId(3);
+//        cliente.setId(3); comentado porque estamos usando Identity
         cliente.setNome("José Lucas");
 
         entityManager.getTransaction().begin();
@@ -40,7 +40,7 @@ public class PrimeiroCrudTest extends EntityManagerTest {
     public void atualizarRegistro() {
         Cliente cliente = new Cliente();
 
-        cliente.setId(1);
+//        cliente.setId(1); comentado porque estamos usando Identity
         cliente.setNome("Fernando Medeiros Silva");
 
         entityManager.getTransaction().begin();

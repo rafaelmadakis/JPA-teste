@@ -54,4 +54,20 @@ public class EstrategiaChavePrimariaTest extends EntityManagerTest {
         Assert.assertNotNull(categariaVerificacao);
     }
 
+    @Test
+    public void testarEstrategiaIdentity() {
+        Categoria categoria = new Categoria();
+        categoria.setNome("Eletrônicos 2");
+
+        entityManager.getTransaction().begin();
+        entityManager.persist(categoria);
+        entityManager.getTransaction().commit();
+
+        entityManager.clear();
+
+        Categoria categariaVerificacao = entityManager.find(Categoria.class, categoria.getId());
+
+        Assert.assertNotNull(categariaVerificacao);
+    }
+
 }
