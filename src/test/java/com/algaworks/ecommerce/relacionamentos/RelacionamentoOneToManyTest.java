@@ -33,7 +33,7 @@ public class RelacionamentoOneToManyTest extends EntityManagerTest {
     }
 
     @Test
-    public void verificacaoRelacionamentoPedido() {
+    public void verificarRelacionamentoPedido() {
         Cliente cliente = entityManager.find(Cliente.class, 1);
         Produto produto = entityManager.find(Produto.class, 1);
 
@@ -43,7 +43,7 @@ public class RelacionamentoOneToManyTest extends EntityManagerTest {
         pedido.setTotal(BigDecimal.TEN);
         pedido.setCliente(cliente);
 
-        ItemPedido itemPedido =new ItemPedido();
+        ItemPedido itemPedido = new ItemPedido();
         itemPedido.setPrecoProduto(produto.getPreco());
         itemPedido.setQuantidade(1);
         itemPedido.setPedido(pedido);
@@ -51,7 +51,7 @@ public class RelacionamentoOneToManyTest extends EntityManagerTest {
 
         entityManager.getTransaction().begin();
         entityManager.persist(pedido);
-        entityManager.persist(produto);
+        entityManager.persist(itemPedido);
         entityManager.getTransaction().commit();
 
         entityManager.clear();
