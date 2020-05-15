@@ -34,7 +34,7 @@ public class Pedido {
     @Column(name = "data_conclusao")
     private LocalDateTime dataConclusao;
 
-   @OneToOne(mappedBy = "pedido")
+    @OneToOne(mappedBy = "pedido")
     private NotaFiscal notaFiscal;
 
     private BigDecimal total;
