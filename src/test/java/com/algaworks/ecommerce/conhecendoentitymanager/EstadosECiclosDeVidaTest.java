@@ -6,6 +6,11 @@ import org.junit.Test;
 
 public class EstadosECiclosDeVidaTest extends EntityManagerTest {
 
+    /**
+     * ciclo de vida dos objetos
+     * @Autor> Rafael Madakis
+     */
+
     @Test
     public void analisarEstados(){
         Categoria categoriaNovo = new Categoria(); // categoria nova
