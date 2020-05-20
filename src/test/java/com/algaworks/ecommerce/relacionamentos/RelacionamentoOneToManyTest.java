@@ -52,7 +52,7 @@ public class RelacionamentoOneToManyTest extends EntityManagerTest {
         itemPedido.setPrecoProduto(produto.getPreco());
 //        itemPedido.setPedidoId(pedido.getId());
 //        itemPedido.setProdutoId(produto.getId());
-        itemPedido.setId(new ItemPedidoId(pedido.getId(), produto.getId()));
+        itemPedido.setId(new ItemPedidoId());
         itemPedido.setQuantidade(1);
         itemPedido.setPedido(pedido);
         itemPedido.setProduto(produto);
