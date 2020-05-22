@@ -10,6 +10,7 @@ import java.util.Date;
 
 public class MapsIdTest extends EntityManagerTest {
 
+    /*
     @Test
     public void inserirPagamento() {
         Pedido pedido = entityManager.find(Pedido.class, 1);
@@ -60,4 +61,7 @@ public class MapsIdTest extends EntityManagerTest {
                 ItemPedido.class, new ItemPedidoId(pedido.getId(), produto.getId()));
         Assert.assertNotNull(itemPedidoVerificacao);
     }
+
+
+     */
 }
