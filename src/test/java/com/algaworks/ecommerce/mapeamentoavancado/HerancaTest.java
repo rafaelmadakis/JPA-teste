@@ -13,7 +13,7 @@ public class HerancaTest extends EntityManagerTest {
     public void salvarCliente(){
 
         Cliente cliente = new Cliente();
-        cliente.setNome("Fernanda Finotti");
+        cliente.setNome("Fernanda Moraes");
 
 
         entityManager.getTransaction().begin();
