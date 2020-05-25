@@ -10,18 +10,12 @@ import javax.persistence.*;
 @Setter
 @Entity
 @Table(name = "pagamento_boleto")
-public class PagamentoBoleto extends EntidadeBaseInteger {
+public class PagamentoBoleto extends Pagamento {
 
 //    @EqualsAndHashCode.Include
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    private Integer id;
-
-    @Column(name = "pedido_id")
-    private String pedidoId;
-
-    @Enumerated(EnumType.STRING)
-    private StatusPagamento status;
 
     @Column(name = "codigo_barras")
     private String codigoBarras;
