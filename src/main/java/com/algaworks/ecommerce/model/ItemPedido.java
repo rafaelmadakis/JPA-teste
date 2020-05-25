@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 @Table(name = "item_pedido")
-public class ItemPedido {
+public class ItemPedido  {
 
     @EmbeddedId
     private ItemPedidoId id;

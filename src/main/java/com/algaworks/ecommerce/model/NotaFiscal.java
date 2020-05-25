@@ -9,16 +9,15 @@ import java.util.Date;
 
 @Getter
 @Setter
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 @Table(name = "nota_fiscal")
-public class NotaFiscal {
+public class NotaFiscal extends EntidadeBaseInteger {
 
-    @EqualsAndHashCode.Include
-    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "pedido_id")
-    private Integer id;
+//    @EqualsAndHashCode.Include
+//    @Id
+////    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "pedido_id")
+//    private Integer id;
 
     @MapsId
     @OneToOne(optional = false)
