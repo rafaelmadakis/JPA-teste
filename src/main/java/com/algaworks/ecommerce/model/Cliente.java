@@ -15,7 +15,8 @@ import java.util.Map;
 //@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @SecondaryTable(name = "cliente_detalhe", pkJoinColumns = @PrimaryKeyJoinColumn(name = "cliente_id"))
 @Entity
-@Table(name = "cliente")
+@Table(name = "cliente", uniqueConstraints = { @UniqueConstraint(name = "unq_cpf", columnNames = { "cpf" }) },
+        indexes = { @Index(name = "idx_nome", columnList = "nome") })
 public class Cliente extends EntidadeBaseInteger {
 
 //    @EqualsAndHashCode.Include
@@ -23,7 +24,10 @@ public class Cliente extends EntidadeBaseInteger {
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    private Integer id;
 
+
     private String nome;
+
+    private String cpf;
 
     @ElementCollection
     @CollectionTable(name = "cliente_contato", joinColumns = @JoinColumn(name = "cliente_id"))
