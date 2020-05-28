@@ -24,9 +24,10 @@ public class Cliente extends EntidadeBaseInteger {
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    private Integer id;
 
-
+    @Column(length = 100, nullable = false)
     private String nome;
 
+    @Column(length = 14, nullable = false)
     private String cpf;
 
     @ElementCollection

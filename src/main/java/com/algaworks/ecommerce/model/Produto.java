@@ -24,7 +24,7 @@ public class Produto extends EntidadeBaseInteger {
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    private Integer id;
 
-    @Column(name = "data_criacao", updatable = false)
+    @Column(name = "data_criacao", updatable = false, nullable = false)
     private LocalDateTime dataCriacao;
 
     @Column(name = "data_ultima_atualizacao", insertable = false)
