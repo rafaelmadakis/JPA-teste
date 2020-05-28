@@ -31,10 +31,13 @@ public class Produto extends EntidadeBaseInteger {
     private LocalDateTime dataUltimaAtualizacao;
 
 
+    @Column( length = 100, nullable = false)
     private String nome;
 
+    @Column(columnDefinition = "varchar(275) not null default 'descricao' ")
     private String descricao;
 
+    @Column(precision = 19, scale = 2)
     private BigDecimal preco;
 
     @Lob
