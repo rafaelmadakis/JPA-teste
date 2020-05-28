@@ -6,7 +6,7 @@ import com.algaworks.ecommerce.model.SexoCliente;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class MapeandoenumeracoesTest extends EntityManagerTest {
+public class MapeandoEnumeracoesTest extends EntityManagerTest {
 
     @Test
     public void testarEnum(){
@@ -14,6 +14,7 @@ public class MapeandoenumeracoesTest extends EntityManagerTest {
 //        cliente.setId(4); comentado porque estamos utilizando o identity
         cliente.setNome("Jose Mineiro");
         cliente.setSexo(SexoCliente.MASCULINO);
+        cliente.setCpf("777");
 
         entityManager.getTransaction().begin();
         entityManager.persist(cliente);

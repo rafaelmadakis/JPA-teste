@@ -3,6 +3,7 @@ package com.algaworks.ecommerce.iniciandocomjpa;
 import com.algaworks.ecommerce.EntityManagerTest;
 import com.algaworks.ecommerce.model.Cliente;
 import com.algaworks.ecommerce.model.Produto;
+import com.algaworks.ecommerce.model.SexoCliente;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -15,6 +16,8 @@ public class PrimeiroCrudTest extends EntityManagerTest {
 
 //        cliente.setId(3); comentado porque estamos usando Identity
         cliente.setNome("José Lucas");
+        cliente.setCpf("000");
+        cliente.setSexo(SexoCliente.MASCULINO);
 
         entityManager.getTransaction().begin();
         entityManager.persist(cliente);
@@ -42,6 +45,8 @@ public class PrimeiroCrudTest extends EntityManagerTest {
 
 //        cliente.setId(1); comentado porque estamos usando Identity
         cliente.setNome("Fernando Medeiros Silva");
+        cliente.setCpf("123456677");
+        cliente.setSexo(SexoCliente.MASCULINO);
 
         entityManager.getTransaction().begin();
         entityManager.merge(cliente);

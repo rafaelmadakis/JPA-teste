@@ -15,6 +15,7 @@ public class EstadosECiclosDeVidaTest extends EntityManagerTest {
     public void analisarEstados(){
         Categoria categoriaNovo = new Categoria(); // categoria nova
         Categoria categoriagerenciadaMerge = entityManager.merge(categoriaNovo); // retorno passa a ser gerenciada
+        categoriaNovo.setNome("Eletrônicos");
 
         Categoria categoriaGerenciada = entityManager.find(Categoria.class,1); // Categoria gerenciada
 

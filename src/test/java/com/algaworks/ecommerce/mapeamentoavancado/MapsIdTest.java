@@ -10,7 +10,7 @@ import java.util.Date;
 
 public class MapsIdTest extends EntityManagerTest {
 
-    /*
+
     @Test
     public void inserirPagamento() {
         Pedido pedido = entityManager.find(Pedido.class, 1);
@@ -19,7 +19,7 @@ public class MapsIdTest extends EntityManagerTest {
 //        notaFiscal.setId(pedido.getId()); @MapsId
         notaFiscal.setPedido(pedido);
         notaFiscal.setDataEmissao(new Date());
-        notaFiscal.setXml("<xml/>");
+        notaFiscal.setXml("<xml/>".getBytes());
 
         entityManager.getTransaction().begin();
         entityManager.persist(notaFiscal);
@@ -63,5 +63,5 @@ public class MapsIdTest extends EntityManagerTest {
     }
 
 
-     */
+
 }
