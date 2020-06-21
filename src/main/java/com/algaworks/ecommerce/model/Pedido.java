@@ -2,7 +2,6 @@ package com.algaworks.ecommerce.model;
 
 import com.algaworks.ecommerce.listener.GenericoListener;
 import com.algaworks.ecommerce.listener.GerarNotaFiscalListener;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -61,12 +60,15 @@ public class Pedido extends EntidadeBaseInteger {
         return StatusPedido.PAGO.equals(status);
     }
 
-//    @PrePersist
+    //    @PrePersist
 //    @PreUpdate
-    public void calcularTotal(){
+    public void calcularTotal() {
         if (itens != null) {
-            itens.stream().map(ItemPedido::getPrecoProduto)
+            total = itens.stream().map(
+                    i -> new BigDecimal(i.getQuantidade()).multiply(i.getPrecoProduto()))
                     .reduce(BigDecimal.ZERO, BigDecimal::add);
+        } else {
+            total = BigDecimal.ZERO;
         }
     }
 
@@ -77,7 +79,7 @@ public class Pedido extends EntidadeBaseInteger {
     }
 
     @PreUpdate
-    public void aoAtualizar(){
+    public void aoAtualizar() {
         dataUltimaAtualizacao = LocalDateTime.now();
         calcularTotal();
     }
@@ -88,7 +90,7 @@ public class Pedido extends EntidadeBaseInteger {
     }
 
     @PostUpdate
-    public void aposAtualizar(){
+    public void aposAtualizar() {
         System.out.println("Após atualizar Pedido");
     }
 
